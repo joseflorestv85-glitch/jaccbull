@@ -1,0 +1,406 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JACCBULL | Clínica Veterinaria Especializada en Reproducción y Nutrición American Bully</title>
+    <!-- Fuente de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <!-- Íconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" charset="UTF-8">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        body {
+            background-color: #121212;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        /* CABECERA */
+        header {
+            background: #1a1a1a;
+            padding: 15px 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #e67e22;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            height: 55px; /* Ajuste proporcional de la imagen */
+            width: auto;
+            border-radius: 6px;
+            object-fit: contain;
+        }
+
+        .logo-text {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .logo-text span {
+            color: #e67e22;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #e67e22;
+        }
+
+        /* SECCIÓN PRINCIPAL (HERO) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.75)), url('https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 46px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: #ffffff;
+            max-width: 900px;
+        }
+
+        .hero h1 span {
+            color: #e67e22;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            max-width: 700px;
+            color: #cccccc;
+        }
+
+        .btn {
+            background-color: #e67e22;
+            color: white;
+            padding: 14px 32px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: background 0.3s;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background-color: #d35400;
+        }
+
+        /* SECCIONES GENERALES */
+        section {
+            padding: 80px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 50px;
+            font-weight: 800;
+            color: #ffffff;
+        }
+
+        .section-title span {
+            color: #e67e22;
+        }
+
+        /* SOBRE NOSOTROS / PILARES / EQUIPO */
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .about-card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid #e67e22;
+        }
+
+        .about-card h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .about-card i {
+            font-size: 28px;
+            color: #e67e22;
+            margin-bottom: 15px;
+        }
+
+        /* SERVICIOS */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .service-box {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s;
+            border-top: 3px solid transparent;
+        }
+
+        .service-box:hover {
+            transform: translateY(-5px);
+            border-top: 3px solid #e67e22;
+        }
+
+        .service-box i {
+            font-size: 40px;
+            color: #e67e22;
+            margin-bottom: 20px;
+        }
+
+        .service-box h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            color: #ffffff;
+        }
+
+        /* TESTIMONIOS */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: #1a1a1a;
+            padding: 30px;
+            border-radius: 8px;
+            font-style: italic;
+            position: relative;
+        }
+
+        .testimonial-card p {
+            margin-bottom: 15px;
+        }
+
+        .testimonial-card span {
+            font-style: normal;
+            font-weight: 700;
+            color: #e67e22;
+            display: block;
+        }
+
+        /* PIE DE PÁGINA (FOOTER) */
+        footer {
+            background: #0d0d0d;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+
+        footer p {
+            color: #777;
+            font-size: 14px;
+        }
+
+        /* BOTÓN FLOTANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            transition: transform 0.3s;
+            text-decoration: none;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* ADAPTABILIDAD (RESPONSIVE) */
+        @media(max-width: 768px) {
+            header {
+                padding: 15px 20px;
+                flex-direction: column;
+                gap: 15px;
+            }
+            nav {
+                display: flex;
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            nav a {
+                margin: 0;
+                font-size: 14px;
+            }
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- CABECERA CON LOGOTIPO -->
+    <header>
+        <a href="#" class="logo-container">
+            <img src="logo.jpg" alt="Logotipo Jaccbull Clínica Veterinaria" class="logo-img">
+            <div class="logo-text">JACC<span>BULL</span></div>
+        </a>
+        <nav>
+            <a href="#about">Especialidades</a>
+            <a href="#services">Servicios</a>
+            <a href="#team">Especialistas</a>
+            <a href="#testimonials">Testimonios</a>
+        </nav>
+    </header>
+
+    <!-- SECCIÓN PRINCIPAL (HERO) -->
+    <section class="hero">
+        <h1>Excelencia en <span>Reproducción y Nutrición</span> BullS</h1>
+        <p>Potenciamos la genética, cuidamos cada cruce y optimizamos el desarrollo nutricional de tus ejemplares de alto nivel.</p>
+        <a href="https://wa.me/tu_numero_de_whatsapp" class="btn" target="_blank">Consulta con un Especialista</a>
+    </section>
+
+    <!-- SOBRE NOSOTROS / PILARES -->
+    <section id="about">
+        <h2 class="section-title">Nuestra <span>Especialidad</span></h2>
+        <div class="about-grid">
+            <div class="about-card">
+                <i class="fa-solid fa-dna"></i>
+                <h3>Reproducción Avanzada</h3>
+                <p>Monitoreo de progesterona, inseminación artificial especializada, ecografías de gestación y control obstétrico para asegurar camadas sanas.</p>
+            </div>
+            <div class="about-card">
+                <i class="fa-solid fa-bowl-food"></i>
+                <h3>Nutrición y Desarrollo</h3>
+                <p>Planes nutricionales a medida, dietas BARF o comerciales orientadas a lograr una masa muscular limpia sin sobrecargar las articulaciones.</p>
+            </div>
+            <div class="about-card">
+                <i class="fa-solid fa-chart-line"></i>
+                <h3>Selección y Crecimiento</h3>
+                <p>Seguimiento desde cachorros para garantizar una correcta evolución estructural acorde al estándar de la raza American Bully.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="services">
+        <h2 class="section-title">Servicios <span>Especializados</span></h2>
+        <div class="services-grid">
+            <div class="service-box">
+                <i class="fa-solid fa-microscope"></i>
+                <h3>Pruebas de Fertilidad</h3>
+                <p>Evaluación seminal completa y seguimiento de ciclos óptimos en hembras para maximizar el éxito reproductivo.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-heart-pulse"></i>
+                <h3>Control de Gestación</h3>
+                <p>Ecografías, radiografías de conteo fetal y asistencia veterinaria profesional durante el parto.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-carrot"></i>
+                <h3>Planes Nutricionales</h3>
+                <p>Dietas personalizadas para etapas de crecimiento, mantenimiento, reproducción o alta exigencia física.</p>
+            </div>
+            <div class="service-box">
+                <i class="fa-solid fa-baby-carriage"></i>
+                <h3>Neonatología Canina</h3>
+                <p>Cuidados intensivos para cachorros recién nacidos, protocolos de lactancia y primeras vacunas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- EQUIPO MÉDICO -->
+    <section id="team">
+        <h2 class="section-title">Médicos <span>Especialistas</span></h2>
+        <div class="about-grid">
+            <div class="about-card" style="text-align: center;">
+                <i class="fa-solid fa-user-doctor" style="font-size: 45px;"></i>
+                <h3>Dr. Eduar Rivas</h3>
+                <p style="color: #e67e22; font-weight: 700; margin-bottom: 10px;">Especialista en Reproducción y Biotecnología Canina</p>
+                <p>Enfocado en monitoreo folicular, inseminación artificial, biotecnología reproductiva y control obstétrico en la raza American Bully.</p>
+            </div>
+            <div class="about-card" style="text-align: center;">
+                <i class="fa-solid fa-user-doctor" style="font-size: 45px;"></i>
+                <h3>Dr. Jonathan Cortez</h3>
+                <p style="color: #e67e22; font-weight: 700; margin-bottom: 10px;">Especialista en Nutrición y Medicina Preventiva</p>
+                <p>Experto en la formulación de planes nutricionales de alto rendimiento, desarrollo muscular, salud articular y seguimiento clínico integral.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonials">
+        <h2 class="section-title">Criadores <span>Satisfechos</span></h2>
+        <div class="testimonials-grid">
+            <div class="testimonial-card">
+                <p>"Gracias al seguimiento de reproducción y las pruebas de JACCBULL logramos sacar adelante una camada espectacular con la estructura exacta que buscábamos."</p>
+                <span>— Marcos G. (Criadero de Bullies)</span>
+            </div>
+            <div class="testimonial-card">
+                <p>"El cambio en la nutrición de mis ejemplares fue radical. Tienen una musculatura limpia, excelente energía y sin problemas articulares. ¡Los mejores en la raza!"</p>
+                <span>— Sofía R. y "Bane"</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- PIE DE PÁGINA (FOOTER) -->
+    <footer>
+        <p>&copy; 2026 JACCBULL. Todos los derechos reservados. Especialistas en Reproducción y Nutrición American Bully.</p>
+    </footer>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/tu_numero_de_whatsapp" class="whatsapp-float" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+</body>
+</html>
